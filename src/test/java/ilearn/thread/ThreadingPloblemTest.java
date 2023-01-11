@@ -2,9 +2,10 @@ package ilearn.thread;
 
 import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.concurrent.*;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class ThreadingPloblemTest {
@@ -60,6 +61,65 @@ public class ThreadingPloblemTest {
             return;
 
         fail("Error Theads executors!!");
+
+    }
+
+    @Test
+    public void timeOutMethodTest() {
+        ArrayList<String> strings = new ArrayList<>();
+        Task task = new Task(strings, 2_000);
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<?> submit = executor.submit(task);
+
+        try {
+            System.out.println("Started..");
+            submit.get(6_000, TimeUnit.MILLISECONDS);
+
+
+            ArrayList arrayList = task.getArrayList();
+            assertEquals("Operação 2", arrayList.get(1));
+            System.out.println("Finished!");
+        } catch (ExecutionException | InterruptedException | TimeoutException e) {
+            System.out.println("Terminou com Falhar");
+            e.printStackTrace();
+            fail("Execução excedeu o tempo limit!");
+        } finally {
+            executor.shutdownNow();
+        }
+
+
+    }
+}
+
+
+class Task implements Runnable {
+
+    private final ArrayList<String> arrayList;
+    private long time;
+
+    public Task(ArrayList<String> arrayList, long time) {
+
+        this.arrayList = arrayList;
+        this.time = time;
+    }
+
+    public ArrayList getArrayList() {
+        return arrayList;
+    }
+
+    @Override
+    public void run() {
+        this.arrayList.add("Operação 1");
+
+        try {
+            Thread.sleep(this.time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        this.arrayList.add("Operação 2");
+
 
     }
 }
