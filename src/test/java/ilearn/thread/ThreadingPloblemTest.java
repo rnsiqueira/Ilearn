@@ -3,6 +3,8 @@ package ilearn.thread;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.*;
 
 import static org.junit.Assert.assertEquals;
@@ -86,6 +88,38 @@ public class ThreadingPloblemTest {
             fail("Execução excedeu o tempo limit!");
         } finally {
             executor.shutdownNow();
+        }
+
+
+    }
+
+    @Test
+    public void timeOutMultThreads() {
+        ArrayList<String> strings = new ArrayList<>();
+        Task task = new Task(strings, 2_000);
+        Task task1 = new Task(strings, 3_000);
+        Task task2 = new Task(strings, 1_000);
+
+        List<Task> tasks = Arrays.asList(task, task1, task2);
+
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        for (Task t : tasks) {
+            Future<?> submit = executor.submit(t);
+
+            try {
+                System.out.println("Started..");
+                submit.get(6_000, TimeUnit.MILLISECONDS);
+
+
+                ArrayList arrayList = task.getArrayList();
+                assertEquals("Operação 2", arrayList.get(1));
+                System.out.println(arrayList.size());
+                System.out.println("Finished!");
+            } catch (ExecutionException | InterruptedException | TimeoutException e) {
+                System.out.println("Terminou com Falhar");
+                e.printStackTrace();
+                fail("Execução excedeu o tempo limit!");
+            }
         }
 
 
