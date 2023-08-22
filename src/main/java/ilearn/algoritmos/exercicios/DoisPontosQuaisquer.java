@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /*
  * 1. Construa um algoritmo que, tendo como dados de entrada dois pontos quaisquer
- * no plano, P(x1,y1) e P(x2,y2), escreva a dist‚ncia entre eles. A fÛrmula que efetua tal c·lculo È: 
+ * no plano, P(x1,y1) e P(x2,y2), escreva a dist√¢ncia entre eles. A fomula que efetua tal calc√∫lo:
  */
 public class DoisPontosQuaisquer {
 	

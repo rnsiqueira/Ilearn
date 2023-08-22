@@ -1,6 +1,6 @@
 package ilearn.algoritmos.exercicios;
 /*
- * Escreva um algoritmo que leia três números inteiros e positivos (A, B, C) e calcule a seguinte expressão:
+ * Escreva um algoritmo que leia trÃªs numero inteiros e positivos (A, B, C) e calcule a seguinte :
  */
 
 import java.math.BigDecimal;

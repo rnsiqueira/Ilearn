@@ -128,7 +128,7 @@ public class CarrinhoCompras {
 	// testes
 	public static void main(String[] args) {
 		CarrinhoCompras carrinho = new CarrinhoCompras("Teste");
-		carrinho.adicionarItem(new Produto(new Long(1), "Teste"), new BigDecimal(40.00), 4);
+		carrinho.adicionarItem(new Produto(1L, "Teste"), new BigDecimal(40.00), 4);
 		System.out.println(carrinho.getItens());
 		System.out.println(carrinho.getValorTotal());
 

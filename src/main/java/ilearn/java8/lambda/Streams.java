@@ -33,10 +33,10 @@ public class Streams {
 
 		resultados = valor2.add(valor4).subtract(valor2).multiply(valor3).add(valor1);
 
-		System.out.println("Equação sobre BigDecimal: " + resultados.setScale(3, BigDecimal.ROUND_HALF_EVEN));
+		System.out.println("EquaÃ§Ã£o sobre BigDecimal: " + resultados.setScale(3, BigDecimal.ROUND_HALF_EVEN));
 
 		List<Pessoas> listPessoas = Arrays.asList(new Pessoas("Rafael N. Siqueira", 28, 10600000.00),
-				new Pessoas("João", 60, 30000.00), new Pessoas("Guilherme", 19, 560.00),
+				new Pessoas("JoÃ£o", 60, 30000.00), new Pessoas("Guilherme", 19, 560.00),
 				new Pessoas("Lucas", 23, 9000.00), new Pessoas("Renan", 28, 800460.00),
 				new Pessoas("Evandro", 55, 205550.00), new Pessoas("Ingrid", 17, 350.00),
 				new Pessoas("Mariana", 32, 50000.00), new Pessoas("Vinicius", 22, 36000.00));
@@ -54,7 +54,7 @@ public class Streams {
 		 * OptionalDouble media = stremsPessoas.mapToDouble(p ->
 		 * p.getIdade()).average();
 		 * 
-		 * System.out.println("Média de idade referente a Lista: " + media);
+		 * System.out.println("Mï¿½dia de idade referente a Lista: " + media);
 		 * 
 		 */
 		

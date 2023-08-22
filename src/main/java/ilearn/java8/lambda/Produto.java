@@ -44,7 +44,7 @@ public class Produto {
     @Override
     public String toString() {
     	// TODO Auto-generated method stub
-    	return "Código: " + codigo + " Descrição: " + descricao ;
+    	return "CÃ³digo: " + codigo + " DescriÃ§Ã£o: " + descricao ;
     }
     
 }
