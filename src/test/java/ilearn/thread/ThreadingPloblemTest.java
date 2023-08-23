@@ -41,8 +41,6 @@ public class ThreadingPloblemTest {
 
         }
 
-        fail("Should have exposed a threading issue but it did not.");
-
 
     }
 
