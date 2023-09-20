@@ -1,4 +1,4 @@
-package ilearn.testes;
+package ilearn.thread.testes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
