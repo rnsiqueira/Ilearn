@@ -38,7 +38,7 @@ class ResultConverTime {
 public class ConvertTime {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/testMatematica.txt"));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/draft-file.txt"));
 
         String s = bufferedReader.readLine();
 

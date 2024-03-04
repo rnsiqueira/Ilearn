@@ -86,7 +86,7 @@ class Result {
 public class FindThePoint {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/main/resources/testMatematica.txt")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/main/resources/draft-file.txt")));
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
 
