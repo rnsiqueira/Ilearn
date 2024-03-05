@@ -21,43 +21,43 @@ public class BotSavesPrincess {
             }
         }
 
-        int x_position_m = 0;
-        int x_position_p = 0;
-        int y_position_m = 0;
-        int y_position_p = 0;
+        int xPositionM = 0;
+        int xPositionP = 0;
+        int yPositionM = 0;
+        int yPositionP = 0;
 
         for (int i = 0; i < matixDimension; i++) {
             for (int j = 0; j < matixDimension; j++) {
                 if ("m".equals(arena[i][j])) {
-                    x_position_m = j;
-                    y_position_m = i;
+                    xPositionM = j;
+                    yPositionM = i;
                 } else if ("p".equals(arena[i][j])) {
-                    x_position_p = j;
-                    y_position_p = i;
+                    xPositionP = j;
+                    yPositionP = i;
 
                 }
 
             }
         }
 
-        while (x_position_p != x_position_m && y_position_p != y_position_m) {
-            if (x_position_m > x_position_p) {
+        while (xPositionP != xPositionM || yPositionP != yPositionM) {
+            if (xPositionM > xPositionP) {
                 System.out.println("LEFT");
-                x_position_m--;
+                xPositionM--;
             }
-            if (x_position_m < x_position_p) {
+            if (xPositionM < xPositionP) {
                 System.out.println("RIGHT");
-                x_position_m++;
+                xPositionM++;
             }
 
 
-            if (y_position_m > y_position_p) {
+            if (yPositionM > yPositionP) {
                 System.out.println("UP");
-                y_position_m--;
+                yPositionM--;
             }
-            if (y_position_m < y_position_p) {
+            if (yPositionM < yPositionP) {
                 System.out.println("DOWN");
-                y_position_m++;
+                yPositionM++;
             }
         }
 
