@@ -82,7 +82,7 @@ public class DiagonalDifference {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/testMatematica.txt")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/draft.txt")));
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
 

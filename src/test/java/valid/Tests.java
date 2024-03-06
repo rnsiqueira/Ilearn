@@ -2,6 +2,9 @@ package valid;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,5 +38,13 @@ public class Tests {
         System.out.println(nums.size());
 
 
+    }
+
+    @Test
+    void roundIntegerNumber() {
+
+        Integer num = 89;
+
+        System.out.println(Integer.valueOf(String.valueOf(Math.ceil(Double.valueOf(num.toString().charAt(0) + "." + num.toString().charAt(1)))).replace(".", "")));
     }
 }

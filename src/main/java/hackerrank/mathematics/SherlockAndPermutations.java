@@ -65,7 +65,7 @@ public class SherlockAndPermutations {
             "2 3");
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/testMatematica.txt")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/draft.txt")));
 
         int t = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");

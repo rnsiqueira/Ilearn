@@ -65,7 +65,7 @@ public class SimpleArraySum {
             "1 2 3 4 10 11");
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/testMatematica.txt")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("src/resources/files/draft.txt")));
 
         int arCount = Integer.parseInt(scanner.nextLine().trim());
 
