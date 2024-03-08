@@ -47,4 +47,6 @@ public class Tests {
 
         System.out.println(Integer.valueOf(String.valueOf(Math.ceil(Double.valueOf(num.toString().charAt(0) + "." + num.toString().charAt(1)))).replace(".", "")));
     }
+
+
 }
