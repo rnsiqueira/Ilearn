@@ -22,14 +22,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation("org.mockito:mockito-all:1.10.19")
 
-
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:30.1.1-jre")
     implementation("org.jfree:jfreechart:1.5.4")
-
+    implementation("cglib:cglib:3.3.0")
 }
 
 tasks.test {

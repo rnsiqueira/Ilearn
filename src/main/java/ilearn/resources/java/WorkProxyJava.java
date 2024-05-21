@@ -17,21 +17,21 @@ public class WorkProxyJava {
         System.out.println("-------------------------");
         System.out.println("Proxy Working");
         SerivceTest proxy = ProxyFactory.createProxy(serivceTest, SerivceTest.class);
-        System.out.println(proxy.write("Proxy interceptor!!!!!"));
+        System.out.println(proxy.write("Testing Class Method..."));
 
     }
 }
 
 
 interface SerivceTest {
-    String write (String text);
+    String write(String text);
 }
 
 class WritingOnService implements SerivceTest {
 
     @Override
     public String write(String text) {
-        return "Dev Rafa writing: "+ text;
+        return "Dev Rafa writing: " + text;
     }
 }
 
@@ -42,14 +42,15 @@ class LoggingInvocationProxy implements InvocationHandler {
     public LoggingInvocationProxy(Object target) {
         this.target = target;
     }
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-        System.out.println("Called Method: " +method.getName()+ " args is: " +
+        System.out.println("Called Method: " + method.getName() + " args is: " +
                 (Objects.nonNull(args) ? Arrays.toString(args) : "Empty"));
 
         Object invoke = method.invoke(target, args);
-        System.out.println("result of Method: "+ invoke);
+        System.out.println("result of Method: " + invoke);
 
         return invoke;
     }
@@ -59,7 +60,7 @@ class ProxyFactory {
 
     public static <T> T createProxy(T target, Class<T> interfaceType) {
         return (T) Proxy.newProxyInstance(interfaceType.getClassLoader(),
-                new Class<?>[] {interfaceType},
-        new LoggingInvocationProxy(target));
+                new Class<?>[]{interfaceType},
+                new LoggingInvocationProxy(target));
     }
 }

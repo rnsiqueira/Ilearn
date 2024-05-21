@@ -26,14 +26,14 @@ public class BotSavesPrincess {
         int yPositionM = 0;
         int yPositionP = 0;
 
-        for (int i = 0; i < matixDimension; i++) {
-            for (int j = 0; j < matixDimension; j++) {
-                if ("m".equals(arena[i][j])) {
-                    xPositionM = j;
-                    yPositionM = i;
-                } else if ("p".equals(arena[i][j])) {
-                    xPositionP = j;
-                    yPositionP = i;
+        for (int positionY = 0; positionY < matixDimension; positionY++) {
+            for (int positionX = 0; positionX < matixDimension; positionX++) {
+                if ("m".equals(arena[positionY][positionX])) {
+                    xPositionM = positionX;
+                    yPositionM = positionY;
+                } else if ("p".equals(arena[positionY][positionX])) {
+                    xPositionP = positionX;
+                    yPositionP = positionY;
 
                 }
 
